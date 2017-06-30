@@ -18,8 +18,16 @@ namespace Datos
                  ,factura.DescuentoDecimal
                  );
             FacturaId = Convert.ToInt32(result);
-            return FacturaId;
 
+
+
+            //Insertar rapuestos de factura
+            
+
+            //insertar manos de obra de factura
+
+
+            return FacturaId;
         }
 
 

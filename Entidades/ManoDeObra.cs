@@ -32,6 +32,29 @@ namespace Entidades
             return Resultado;
         }
 
+        public static DataTable ListToDataTable(List<ManoDeObra> list, int FacturaId)
+        {
+            DataTable dt = new DataTable(); //Crea una tabla vacia
+
+            //Agrega nombres de columnas a la tabla
+            dt.Columns.Add("Descripcion");
+            dt.Columns.Add("Precio");
+            dt.Columns.Add("FacturaId");
+
+            //Por cada objeto de mano de obra en la lista, inserta un registro en la tabla
+            foreach (ManoDeObra man in list)
+            {
+                DataRow dr = dt.NewRow(); //crea un registro
+                dr["Descripcion"] = man.Descripcion; //pone la descripcion en la columna de descripcion.
+                dr["Precio"] = man.Precio; //pone el precio en la columna de precio
+                dr["FacturaId"] = FacturaId; //pone el id de la factura
+
+                dt.Rows.Add(dr); //agrega el registro a la tabla
+            }
+
+            return dt;
+        }
+
     }
 
         

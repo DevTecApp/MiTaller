@@ -36,7 +36,26 @@ namespace Entidades
 
             return Resultado;
         }
+        public static DataTable ListToDataTable(List<Repuesto> list, int FacturaId)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("FacturaId");
+            dt.Columns.Add("Precio");
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("Cantidad");
 
+            var algo = list.GroupBy(x => x.RepuestoId).Select(x => new { Nombre = x.First().Nombre, Precio = x.Sum(j => j.Precio), Cantidad = x.Count() }).ToList();
 
+            foreach(Repuesto repuesto in list)
+            {
+                DataRow dr = dt.NewRow();
+                dr["FacturaId"] = FacturaId;
+                dr["Precio"] = repuesto.Precio;
+                dr["Nombre"] = repuesto.Nombre;
+                //dr["Cantidad"] = repuesto.Cantidad;
+            }
+
+            return dt;
+        }
     }
 }
