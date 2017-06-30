@@ -36,7 +36,7 @@ namespace Datos
 
             Utilidades.EjecutarProcedimiento("ManoDeObra_Update"
                                              ,manodeobra.ManoDeObraId
-                                             ,manodeobra.Precio
+                                             ,manodeobra.Descripcion
                                              ,manodeobra.Precio
                                              );
 

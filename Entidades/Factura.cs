@@ -8,14 +8,14 @@ namespace Entidades
 {
     public class Factura
     {
-        int Facturaid { get; set; }
-        Carro Carro { get; set; }
-        decimal Total { get; set; }
-        DateTime Fecha { get; set; }
-        decimal DescuentoDecimal { get; set;}
-        List<Repuesto> Repuestos { get; set; }
-        List<ManoDeObra> ManosDeObra { get; set; }
-        bool Anulada { get; set; }
-        DateTime? FechaAnulacion { get; set; }
+        public int Facturaid { get; set; }
+        public Carro Carro { get; set; }
+        public decimal Total { get; set; }
+        public DateTime Fecha { get; set; }
+        public decimal DescuentoDecimal { get; set;}
+        public List<Repuesto> Repuestos { get; set; }
+        public List<ManoDeObra> ManosDeObra { get; set; }
+        public bool Anulada { get; set; }
+        public DateTime? FechaAnulacion { get; set; }
     }
 }
